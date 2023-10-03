@@ -62,6 +62,15 @@ app.get("/", async (req, res) => {
   //res.render('index', {  peopleData : result })
 });
 
+app.get("/update", async (req, res) => {
+  let result = await cxnDB().catch(console.error);
+
+  console.log("get/: ", result);
+
+  res.send("here for a second: " + result[0].name);
+  //res.render('index', {  peopleData : result })
+});
+
 let myVariableServer = "soft coded server data";
 
 app.get("/barry", function (req, res) {
